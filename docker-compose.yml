@@ -1,5 +1,5 @@
 uwsgi:
-  image: "bellkev/circle-ecs:${CIRCLE_SHA1}"
+  image: "sunghoaraipark/circle-ecs:${CIRCLE_SHA1}"
 nginx:
   image: bellkev/nginx-base:stable
   links:
