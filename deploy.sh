@@ -21,7 +21,7 @@ make_task_def() {
     task_template='[
 	{
 	    "name": "uwsgi",
-	    "image": "bellkev/circle-ecs:%s",
+	    "image": "sunghoaraipark/circle-ecs:%s",
 	    "essential": true,
 	    "memory": 200,
 	    "cpu": 10
