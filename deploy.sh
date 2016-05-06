@@ -45,6 +45,9 @@ make_task_def() {
         {
            "name": "fluent-awslogs",
            "image": "newgyu/fluent-awslogs",
+           "memory": 200,
+           "essential": true,
+           "cpu": 10,
            "portMappings": [
                {
                    "hostPort": 22424,
