@@ -41,7 +41,32 @@ make_task_def() {
 	    "cpu": 10,
 	    "memory": 200,
 	    "essential": true
-	}
+	},
+        {
+           "name": "fluent-awslogs",
+           "image": "newgyu/fluent-awslogs",
+           "portMappings": [
+               {
+                   "hostPort": 22424,
+                   "containerPort": 22424,
+                   "protocol": "tcp"
+               }
+           ],
+           "environment": [
+               {
+                   "name": "AWSLOGS_GROUP",
+                   "value": "sunarai-cluster-fluentd"
+               },
+               {
+                   "name": "AWSLOGS_STREAM",
+                   "value": "batch"
+               },
+               {
+                    "name": "AWS_REGION",
+                    "value": "ap-northeast-1"
+               }
+            ]
+        }
     ]'
 
     task_def=$(printf "$task_template" $CIRCLE_SHA1 $host_port)
