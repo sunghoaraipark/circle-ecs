@@ -24,7 +24,13 @@ make_task_def() {
 	    "image": "sunghoaraipark/circle-ecs:%s",
 	    "essential": true,
 	    "memory": 200,
-	    "cpu": 10
+	    "cpu": 10,
+            "logConfiguration": {
+                "logDriver": "fluentd",
+                "options": {
+                    "fluentd-address": "127.0.0.1:22424"
+                }
+            }
 	},
 	{
 	    "name": "nginx",
@@ -40,7 +46,13 @@ make_task_def() {
 	    ],
 	    "cpu": 10,
 	    "memory": 200,
-	    "essential": true
+	    "essential": true,
+            "logConfiguration": {
+                "logDriver": "fluentd",
+                "options": {
+                "fluentd-address": "127.0.0.1:22424"
+                }
+            }
 	},
         {
            "name": "fluent-awslogs",
